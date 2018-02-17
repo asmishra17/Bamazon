@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>bamazon</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>name</key>
+			<string>root@127.0.0.1</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJX
+			TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAF
+			gAdUdHlwZVRyb3dzXxAdU2VsZWN0aW9uRGV0YWlsVHlwZU5TSW5k
+			ZXhTZXTSFwsYGVxOU1JhbmdlQ291bnQQAIAG0hscHR5aJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1pOU0luZGV4U2V0oh8gWk5TSW5kZXhTZXRY
+			TlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVk
+			QXJjaGl2ZXLRJidUZGF0YYABAAgAEQAaACMALQAyADcAQABGAE0A
+			VQBgAGcAagBsAG4AcQBzAHUAdwB8AIEAoQCmALMAtQC3ALwAxwDQ
+			ANsA3gDpAPIA9wEEAQcBGQEcASEAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {694, 450}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>USE bamazon;
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Air Mattress", "Outdoors", 40.00, 10), ("Soylent", "Food", 29.99, 5), ("Watch", "Jewelry", 150.00, 3), ("Lotion", "Personal Care", 9.99, 10), ("Book", "Books", 15.00, 20), ("Bamazon Echo", "Electronics", 100.00, 5), ("Dress", "Clothing", 19.99, 2), ("Granola Bars", "Food", 9.50, 7), ("Gloves", "Clothing", 5.00, 5), ("Fitbit", "Electronics", 100.00, 1);
+</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>203</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>SELECT * FROM products</string>
+		<string>USE bamazon;
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Air Mattress", "Outdoors", 40.00, 10), ("Soylent", "Food", 29.99, 5), ("Watch", "Jewelry", 150.00, 3), ("Lotion", "Personal Care", 9.99, 10), ("Book", "Books", 15.00, 20), ("Bamazon Echo", "Electronics", 100.00, 5), ("Dress", "Clothing", 19.99, 2), ("Granola Bars", "Food", 9.50, 7), ("Gloves", "Clothing", 5.00, 5), ("Fitbit", "Electronics", 100.00, 1)</string>
+		<string>DROP DATABASE IF EXISTS bamazon;
+CREATE DATABASE bamazon;
+USE bamazon;
+CREATE TABLE products (
+  item_id INTEGER NOT NULL AUTO_INCREMENT,
+  product_name VARCHAR(50) NOT NULL,
+  department_name VARCHAR(45) NOT NULL,
+  price DECIMAL(8,2) NOT NULL,
+  stock_quantity INTEGER(3) NOT NULL, 
+  PRIMARY KEY (item_id)
+)</string>
+		<string>DROP DATABASE IF EXISTS bamazon;
+CREATE DATABASE bamazon;
+USE bamazon;
+CREATE TABLE prodcuts (
+  item_id INTEGER NOT NULL AUTO_INCREMENT,
+  product_name VARCHAR(50) NOT NULL,
+  department_name VARCHAR(45) NOT NULL,
+  price DECIMAL(8,2) NOT NULL,
+  stock_quantity INTEGER(3) NOT NULL, 
+  PRIMARY KEY (id)
+)</string>
+		<string>create database assignment_db
+
+use assignment_db
+
+create table departments (
+	id integer auto_increment,
+	name varchar(250),
+	primary key(id)
+)</string>
+		<string>select * from departments</string>
+		<string>create table departments (
+	id integer auto_increment,
+	name varchar(250),
+	primary key(id)
+)</string>
+		<string>SELECT * FROM top5000 WHERE artist="Britney Spears"</string>
+		<string>SELECT * FROM top5000 WHERE artist="Usher"</string>
+		<string>SELECT artist FROM top5000 WHERE artist="Usher"</string>
+		<string>SELECT artist FROM top5000</string>
+		<string>SELECT * FROM top5000</string>
+		<string>SELECT * FROM top5000,</string>
+		<string>SELECT * FROM artist,</string>
+		<string>SELECT *,</string>
+		<string>SELECT * FROM,</string>
+		<string>SELECT * FROM</string>
+		<string>SELECT artist,
+FROM TABLE top5000</string>
+		<string>SELECT artist, FROM TABLE top5000</string>
+		<string>SELECT artist FROM TABLE top5000,</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.21</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
