@@ -36,22 +36,31 @@ function displayProducts () {
 };
 
 function takeOrder () {
-    inquirer 
-        .prompt ([
-            {
-                name: "itemID", 
-                type: "input",
-                message: "What is the ID of the product you would like to buy?"
-            }, 
-            {
-                name: "units",
-                type: "input",
-                message: "How many units would you like to buy?"
-            }
-        ]).then(function(answer) {
-            console.log("successful inquiry!")
-            var chosenItem;
-            console.log
-        });
+    connection.query("SELECT * FROM products", function (err, results) {
+        inquirer 
+            .prompt ([
+                {
+                    name: "itemID", 
+                    type: "input",
+                    message: "What is the ID of the product you would like to buy?"
+                }, 
+                {
+                    name: "units",
+                    type: "input",
+                    message: "How many units would you like to buy?"
+                }
+            ]).then(function(answer) {
+                var chosenItem;
+
+                for (var i = 0; i < results.length; i++) {
+                    if (results[i].item_id === parseInt(answer.itemID)) {
+                        chosenItem = results[i].product_name;
+                    }
+                }
+                
+                console.log(chosenItem);
+                
+            });
+    });
 }
 
