@@ -25,7 +25,6 @@ connection.connect(function(err) {
     takeOrder();
 });
 
-
 function displayProducts () {
     connection.query("SELECT * FROM products", function(err, results) {
         console.log(`ID: Name: Price:`);
