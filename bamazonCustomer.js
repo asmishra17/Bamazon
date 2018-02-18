@@ -50,17 +50,70 @@ function takeOrder () {
                     message: "How many units would you like to buy?"
                 }
             ]).then(function(answer) {
+                
+                // get information about the chosen item
                 var chosenItem;
 
                 for (var i = 0; i < results.length; i++) {
                     if (results[i].item_id === parseInt(answer.itemID)) {
-                        chosenItem = results[i].product_name;
+                        chosenItem = results[i];
                     }
                 }
-                
+
                 console.log(chosenItem);
-                
+
+                // determine if stock is sufficient 
+                if (chosenItem.stock_quantity < parseInt(answer.units)) {
+                    console.log("Insufficient quantity!");
+                    // do something...
+                } else {
+                    // fulfull order
+                    console.log("Order filled");
+                    var test = chosenItem.stock_quantity - answer.units;
+                    connection.query(
+                        "UPDATE products SET ? WHERE ?", 
+                        [
+                            {
+                                stock_quantity : test
+                            },
+                            {
+                                item_id : parseInt(answer.itemID)
+                            }
+                        ],
+                        function (error) {
+                            if (error) {
+                                throw error
+                            }
+                            console.log("Stock updated!")
+                        }
+                    )
+                    displayTotal();
+                }
             });
     });
 }
 
+function updateStock() {
+    connection.query(
+        "UPDATE products SET ? WHERE ?", 
+        [
+            {
+                stock_quantity : stock_quantity - answer.units
+            },
+            {
+                item_id : parseInt(answer.itemID)
+            }
+        ],
+        function (error) {
+            if (error) {
+                throw error
+            }
+            console.log("Stock updated!")
+        }
+    )
+};
+
+
+function displayTotal() {
+
+}

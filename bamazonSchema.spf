@@ -93,6 +93,26 @@ CREATE TABLE products (
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>SELECT * FROM products</string>
+		<string>SELECT * FROM proucts</string>
+		<string>DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+  item_id INTEGER NOT NULL AUTO_INCREMENT,
+  product_name VARCHAR(50) NOT NULL,
+  department_name VARCHAR(45) NOT NULL,
+  price DECIMAL(8,2) NOT NULL,
+  stock_quantity INTEGER(3) NOT NULL, 
+  PRIMARY KEY (item_id)
+)</string>
+		<string>DROP TABLE IF EXISTS products
+CREATE TABLE products (
+  item_id INTEGER NOT NULL AUTO_INCREMENT,
+  product_name VARCHAR(50) NOT NULL,
+  department_name VARCHAR(45) NOT NULL,
+  price DECIMAL(8,2) NOT NULL,
+  stock_quantity INTEGER(3) NOT NULL, 
+  PRIMARY KEY (item_id)
+)</string>
 		<string>DROP DATABASE IF EXISTS bamazon;
 CREATE DATABASE bamazon;
 USE bamazon;
@@ -142,25 +162,6 @@ create table departments (
 		<string>SELECT * FROM</string>
 		<string>SELECT artist,
 FROM TABLE top5000</string>
-		<string>SELECT artist, FROM TABLE top5000</string>
-		<string>SELECT artist FROM TABLE top5000,</string>
-		<string>SELECT artist FROM TABLE top5000</string>
-		<string>DROP DATABASE IF EXISTS top_songsDB;
-CREATE database top_songsDB;
-USE top_songsDB;
-CREATE TABLE top5000 (
-  position INT NOT NULL,
-  artist VARCHAR(100) NULL,
-  song VARCHAR(100) NULL,
-  year INT NULL,
-  raw_total DECIMAL(10,4) NULL,
-  raw_usa DECIMAL(10,4) NULL,
-  raw_uk DECIMAL(10,4) NULL,
-  raw_eur DECIMAL(10,4) NULL,
-  raw_row DECIMAL(10,4) NULL,
-  PRIMARY KEY (position)
-);
-SELECT * FROM top5000</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>

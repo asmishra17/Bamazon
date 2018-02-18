@@ -67,8 +67,9 @@
 			<string>USE bamazon;
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Air Mattress", "Outdoors", 40.00, 10), ("Soylent", "Food", 29.99, 5), ("Watch", "Jewelry", 150.00, 3), ("Lotion", "Personal Care", 9.99, 10), ("Book", "Books", 15.00, 20), ("Bamazon Echo", "Electronics", 100.00, 5), ("Dress", "Clothing", 19.99, 2), ("Granola Bars", "Food", 9.50, 7), ("Gloves", "Clothing", 5.00, 5), ("Fitbit", "Electronics", 100.00, 1);
-</string>
+VALUES ("Air Mattress", "Outdoors", 40.00, 100), ("Soylent", "Food", 29.99, 90), ("Watch", "Jewelry", 150.00, 80), ("Lotion", "Personal Care", 9.99, 70), ("Book", "Books", 15.00, 60), ("Bamazon Echo", "Electronics", 100.00, 50), ("Dress", "Clothing", 19.99, 40), ("Granola Bars", "Food", 9.50, 30), ("Gloves", "Clothing", 5.00, 20), ("Fitbit", "Electronics", 100.00, 10);
+
+SELECT * FROM products</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
@@ -83,6 +84,9 @@ VALUES ("Air Mattress", "Outdoors", 40.00, 10), ("Soylent", "Food", 29.99, 5), (
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Air Mattress", "Outdoors", 40.00, 100), ("Soylent", "Food", 29.99, 90), ("Watch", "Jewelry", 150.00, 80), ("Lotion", "Personal Care", 9.99, 70), ("Book", "Books", 15.00, 60), ("Bamazon Echo", "Electronics", 100.00, 50), ("Dress", "Clothing", 19.99, 40), ("Granola Bars", "Food", 9.50, 30), ("Gloves", "Clothing", 5.00, 20), ("Fitbit", "Electronics", 100.00, 10);
+SELECT * FROM products</string>
 		<string>SELECT * FROM products</string>
 		<string>USE bamazon;
 INSERT INTO products (product_name, department_name, price, stock_quantity)
@@ -137,7 +141,6 @@ create table departments (
 		<string>SELECT artist,
 FROM TABLE top5000</string>
 		<string>SELECT artist, FROM TABLE top5000</string>
-		<string>SELECT artist FROM TABLE top5000,</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
