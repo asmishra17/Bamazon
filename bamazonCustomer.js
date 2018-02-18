@@ -65,10 +65,9 @@ function takeOrder () {
                 // determine if stock is sufficient 
                 if (chosenItem.stock_quantity < parseInt(answer.units)) {
                     console.log("Insufficient quantity!");
-                    // do something...
+                    // do something...restart
                 } else {
                     // fulfull order
-                    console.log("Order filled");
                     var test = chosenItem.stock_quantity - answer.units;
                     connection.query(
                         "UPDATE products SET ? WHERE ?", 
@@ -84,36 +83,17 @@ function takeOrder () {
                             if (error) {
                                 throw error
                             }
-                            console.log("Stock updated!")
                         }
                     )
+                    function displayTotal() {
+                        var total = answer.units * chosenItem.price;
+                        console.log(`Your total is: $${total}`);
+                        console.log(`Thanks for shopping!`)
+                        // restart?
+                    }
                     displayTotal();
                 }
             });
     });
 }
 
-function updateStock() {
-    connection.query(
-        "UPDATE products SET ? WHERE ?", 
-        [
-            {
-                stock_quantity : stock_quantity - answer.units
-            },
-            {
-                item_id : parseInt(answer.itemID)
-            }
-        ],
-        function (error) {
-            if (error) {
-                throw error
-            }
-            console.log("Stock updated!")
-        }
-    )
-};
-
-
-function displayTotal() {
-
-}
