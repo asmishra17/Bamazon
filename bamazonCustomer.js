@@ -27,9 +27,12 @@ connection.connect(function(err) {
 
 function displayProducts () {
     connection.query("SELECT * FROM products", function(err, results) {
-        console.log(`ID: Name: Price:`);
         for (var i = 0; i < results.length; i++) {
-            console.log(`${results[i].item_id} ${results[i].product_name} ${results[i].price}`)
+            console.log("");
+            console.log(`Item ID: ${results[i].item_id}`);
+            console.log(`Name: ${results[i].product_name}`);
+            console.log(`Price: $${results[i].price}`);
+            console.log("");
         }
     });
 };
@@ -58,8 +61,6 @@ function takeOrder () {
                         chosenItem = results[i];
                     }
                 }
-
-                console.log(chosenItem);
 
                 // determine if stock is sufficient 
                 if (chosenItem.stock_quantity < parseInt(answer.units)) {

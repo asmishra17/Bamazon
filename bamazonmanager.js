@@ -42,7 +42,7 @@ function start () {
         ]).then(function(answer) {
             switch (answer.action) {
                 case "View Products for Sale":
-                    viewProducts();
+                    viewProducts(results);
                     break;
                 case "View Low Inventory":
                     viewLow();
@@ -58,8 +58,15 @@ function start () {
     })
 };
 
-function viewProducts() {
-
+function viewProducts(results) {
+    for (var i = 0; i < results.length; i++) {
+        console.log("");
+        console.log(`Item ID: ${results[i].item_id}`);
+        console.log(`Name: ${results[i].product_name}`);
+        console.log(`Price: $${results[i].price}`);
+        console.log(`Quantity: ${results[i].stock_quantity}`);
+        console.log("");
+    }
 };
 
 function viewLow() {
