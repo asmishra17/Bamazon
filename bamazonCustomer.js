@@ -2,15 +2,15 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
-// create the connection information for the sql database
+// create the connection for the sql database
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
   
-    // Your username
+    // username
     user: "root",
   
-    // Your password
+    // password
     password: "",
     database: "bamazon"
   });
@@ -65,9 +65,10 @@ function takeOrder () {
                 // determine if stock is sufficient 
                 if (chosenItem.stock_quantity < parseInt(answer.units)) {
                     console.log("Insufficient quantity!");
-                    // do something...restart
+                    // do something...restart or end?
                 } else {
                     // fulfull order
+                    var total = answer.units * chosenItem.price;
                     var test = chosenItem.stock_quantity - answer.units;
                     connection.query(
                         "UPDATE products SET ? WHERE ?", 
@@ -85,15 +86,15 @@ function takeOrder () {
                             }
                         }
                     )
-                    function displayTotal() {
-                        var total = answer.units * chosenItem.price;
-                        console.log(`Your total is: $${total}`);
-                        console.log(`Thanks for shopping!`)
-                        // restart?
-                    }
-                    displayTotal();
+                    displayTotal(total);
                 }
             });
     });
+}
+
+function displayTotal(total) {
+    console.log(`Your total is: $${total}`);
+    console.log(`Thanks for shopping!`)
+    // restart or end?
 }
 
