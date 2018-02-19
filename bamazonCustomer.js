@@ -27,6 +27,10 @@ connection.connect(function(err) {
 
 function displayProducts () {
     connection.query("SELECT * FROM products", function(err, results) {
+        if (err) {
+            throw err;
+        }
+        
         for (var i = 0; i < results.length; i++) {
             console.log("");
             console.log(`Item ID: ${results[i].item_id}`);

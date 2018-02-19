@@ -45,7 +45,7 @@ function start () {
                     viewProducts(results);
                     break;
                 case "View Low Inventory":
-                    viewLow();
+                    viewLow(results);
                     break;
                 case "Add to Inventory":
                     addInv();
@@ -69,8 +69,17 @@ function viewProducts(results) {
     }
 };
 
-function viewLow() {
-
+function viewLow(results) {
+    connection.query("SELECT * FROM products WHERE stock_quantity < 5", function(err, results) {
+        for (var i = 0; i < results.length; i++) {
+            console.log("");
+            console.log(`Item ID: ${results[i].item_id}`);
+            console.log(`Name: ${results[i].product_name}`);
+            console.log(`Price: $${results[i].price}`);
+            console.log(`Quantity: ${results[i].stock_quantity}`);
+            console.log("");
+        }
+    });
 };
 
 function addInv() {
