@@ -20,7 +20,7 @@ connection.connect(function(err) {
     if (err) {
         throw err;
     }
-    // run the start function after the connection is made to prompt the user
+    // run the start function after the connection is made
     displayProducts();
     takeOrder();
 });
@@ -69,16 +69,15 @@ function takeOrder () {
                 // determine if stock is sufficient 
                 if (chosenItem.stock_quantity < parseInt(answer.units)) {
                     console.log("Insufficient quantity!");
-                    // do something...restart or end?
                 } else {
                     // fulfull order
                     var total = answer.units * chosenItem.price;
-                    var test = chosenItem.stock_quantity - answer.units;
+                    var updatedStock = chosenItem.stock_quantity - answer.units;
                     connection.query(
                         "UPDATE products SET ? WHERE ?", 
                         [
                             {
-                                stock_quantity : test
+                                stock_quantity : updatedStock
                             },
                             {
                                 item_id : parseInt(answer.itemID)
@@ -99,6 +98,5 @@ function takeOrder () {
 function displayTotal(total) {
     console.log(`Your total is: $${total}`);
     console.log(`Thanks for shopping!`)
-    // restart or end?
 }
 
