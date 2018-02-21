@@ -4,6 +4,6 @@ In this application, I created an **Amazon-like** storefront using *MySQL* and *
 
 See below for screenshots of the application at work! 
 
-The beginning of the "Bamazon Customer View". The customer is able to see all products in inventory. 
+The beginning of the "Bamazon Customer View": the customer is able to see all products in inventory. 
 
 ![Customer Start](/images/customer_viewProd.png)
