@@ -6,4 +6,4 @@ See below for screenshots of the application at work!
 
 The beginning of the "Bamazon Customer View": the customer is able to see all products in inventory. 
 
-![Customer Start](/images/customer_viewProd.png)
+![Customer Start](/image/customer_viewProd.png)
